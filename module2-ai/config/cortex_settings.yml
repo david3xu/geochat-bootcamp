@@ -1,0 +1,7 @@
+cortex:
+  embed_model_768: "EMBED_TEXT_768"
+  embed_model_1024: "EMBED_TEXT_1024"
+  complete_model: "COMPLETE"
+  batch_size: 100
+  max_retries: 3
+  timeout_seconds: 30 

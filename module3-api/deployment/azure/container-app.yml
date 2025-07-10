@@ -1,0 +1,49 @@
+apiVersion: 2023-05-01
+location: australiaeast
+name: chat2map-api
+properties:
+  managedEnvironmentId: /subscriptions/{subscription-id}/resourceGroups/rg-chat2map/providers/Microsoft.App/managedEnvironments/chat2map-env
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8000
+      allowInsecure: false
+    secrets:
+      - name: django-secret-key
+        value: "your-secret-key-here"
+      - name: db-password
+        value: "your-db-password"
+  template:
+    containers:
+      - name: chat2map-api
+        image: chat2map-api:latest
+        env:
+          - name: DJANGO_SETTINGS_MODULE
+            value: "src.settings.production"
+          - name: SECRET_KEY
+            secretRef: django-secret-key
+          - name: DB_HOST
+            value: "your-azure-postgresql-server.postgres.database.azure.com"
+          - name: DB_NAME
+            value: "chat2map"
+          - name: DB_USER
+            value: "postgres@your-azure-postgresql-server"
+          - name: DB_PASSWORD
+            secretRef: db-password
+          - name: REDIS_URL
+            value: "redis://your-azure-redis.redis.cache.windows.net:6380"
+          - name: MODULE1_API_URL
+            value: "http://module1-api.azurewebsites.net"
+          - name: MODULE2_AI_URL
+            value: "http://module2-ai.azurewebsites.net"
+    scale:
+      minReplicas: 1
+      maxReplicas: 10
+      rules:
+        - name: http-rule
+          http:
+            metadata:
+              concurrentRequests: "100"
+            auth:
+              - secretRef: http-rule-secret
+              - triggerParameter: "http-rule-secret" 

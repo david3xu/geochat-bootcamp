@@ -1,0 +1,5 @@
+vector_db:
+  endpoint: "your-cosmos-db-endpoint"
+  key: "your-cosmos-db-key"
+  database_name: "geochat_vectors"
+  container_name: "geological_embeddings" 

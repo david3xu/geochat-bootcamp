@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # Azure Cosmos DB Emulator for local development
+  cosmos-emulator:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
+    container_name: geochat-cosmos-emulator
+    ports:
+      - "8081:8081"
+      - "10251:10251"
+      - "10252:10252"
+      - "10253:10253"
+      - "10254:10254"
+    environment:
+      AZURE_COSMOS_EMULATOR_PARTITION_COUNT: 2
+      AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE: "true"
+    volumes:
+      - cosmos_data:/data/db
+
+  # Module 2 AI Engine Service
+  ai-engine:
+    build: .
+    container_name: geochat-ai-engine
+    environment:
+      SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT}
+      SNOWFLAKE_USER: ${SNOWFLAKE_USER}
+      SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD}
+      SNOWFLAKE_WAREHOUSE: ${SNOWFLAKE_WAREHOUSE}
+      SNOWFLAKE_DATABASE: ${SNOWFLAKE_DATABASE}
+      SNOWFLAKE_SCHEMA: ${SNOWFLAKE_SCHEMA}
+      COSMOS_DB_ENDPOINT: http://cosmos-emulator:8081
+      COSMOS_DB_KEY: ${COSMOS_DB_KEY}
+      FLASK_ENV: development
+    ports:
+      - "5001:5001"
+    depends_on:
+      - cosmos-emulator
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./config:/app/config
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/api/ai/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  cosmos_data: 

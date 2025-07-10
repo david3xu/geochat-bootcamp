@@ -1,0 +1,116 @@
+# Snowflake Cortex Configuration for Module 2
+# Enterprise AI Integration with Measurable Learning Outcomes
+
+snowflake:
+  account: "your-account.snowflakecomputing.com"
+  user: "your-username"
+  password: "your-password"
+  warehouse: "COMPUTE_WH"
+  database: "GEOLOGICAL_AI_DB"
+  schema: "CORTEX_SCHEMA"
+  role: "CORTEX_ROLE"
+  
+  # Cortex function configuration
+  cortex:
+    embed_model: "e5-base-v2"
+    complete_model: "llama2-70b-chat"
+    max_batch_size: 100
+    timeout_seconds: 30
+    
+    # Performance targets for learning outcomes
+    performance_targets:
+      embed_response_time_ms: 500
+      complete_response_time_ms: 2000
+      batch_processing_rate: 50  # texts per second
+      success_rate_percentage: 95
+    
+    # Usage tracking for supervision
+    usage_limits:
+      daily_embed_calls: 10000
+      daily_complete_calls: 5000
+      weekly_total_calls: 100000
+      
+    # Cost optimization
+    cost_management:
+      embed_cost_per_1k_tokens: 0.001
+      complete_cost_per_1k_tokens: 0.002
+      monthly_budget_usd: 1000
+      
+  # Vector database configuration
+  vector_db:
+    connection_string: "your-cosmos-connection-string"
+    database_name: "geological_vectors"
+    container_name: "embeddings"
+    partition_key: "/partitionKey"
+    throughput: 1000
+    
+  # Performance monitoring
+  performance:
+    target_embed_time_ms: 500
+    target_complete_time_ms: 2000
+    target_search_time_ms: 100
+    target_qa_time_ms: 2000
+    target_accuracy_percentage: 85
+    
+  # Learning targets for Module 2
+  learning_targets:
+    weekly_cortex_calls: 1000
+    embedding_quality_threshold: 0.8
+    completion_accuracy_threshold: 0.85
+    vector_search_performance_ms: 100
+    qa_response_accuracy: 0.85
+    
+  # Supervision metrics
+  supervision:
+    daily_usage_reporting: true
+    performance_monitoring: true
+    cost_tracking: true
+    quality_assessment: true
+    
+  # Geological domain configuration
+  geological_domain:
+    mineral_types:
+      - gold
+      - iron
+      - copper
+      - nickel
+      - lithium
+      - uranium
+      - zinc
+      - lead
+      - silver
+      - platinum
+      
+    geological_terms:
+      - exploration
+      - deposit
+      - mineralization
+      - ore
+      - grade
+      - tonnage
+      - outcrop
+      - formation
+      - fault
+      - vein
+      
+    western_australia_regions:
+      - pilbara
+      - kimberley
+      - yilgarn_craton
+      - goldfields
+      - perth_basin
+      
+  # Quality assessment
+  quality_assessment:
+    geological_accuracy_threshold: 0.85
+    technical_precision_threshold: 0.8
+    spatial_context_threshold: 0.7
+    mineral_identification_accuracy: 0.9
+    
+  # Portfolio evidence generation
+  portfolio_evidence:
+    cortex_usage_summary: true
+    performance_metrics: true
+    cost_optimization_metrics: true
+    learning_targets_assessment: true
+    geological_expertise_indicators: true 

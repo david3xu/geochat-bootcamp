@@ -1,0 +1,22 @@
+apiVersion: 2023-06-01-preview
+location: australiaeast
+name: chat2map-postgresql
+properties:
+  administratorLogin: postgres
+  administratorLoginPassword: "your-secure-password"
+  version: "15"
+  storage:
+    storageSizeGB: 32
+  backup:
+    backupRetentionDays: 7
+    geoRedundantBackup: "Enabled"
+  network:
+    delegatedSubnetResourceId: /subscriptions/{subscription-id}/resourceGroups/rg-chat2map/providers/Microsoft.Network/virtualNetworks/vnet-chat2map/subnets/subnet-database
+    privateDnsZoneResourceId: /subscriptions/{subscription-id}/resourceGroups/rg-chat2map/providers/Microsoft.Network/privateDnsZones/privatelink.postgres.database.azure.com
+  highAvailability:
+    mode: "ZoneRedundant"
+  maintenanceWindow:
+    customWindow: "Enabled"
+    startHour: 2
+    startMinute: 0
+    dayOfWeek: 0 

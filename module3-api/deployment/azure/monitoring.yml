@@ -1,0 +1,35 @@
+apiVersion: 2021-02-01
+location: australiaeast
+name: chat2map-monitoring
+properties:
+  applicationType: web
+  kind: web
+  flowType: Bluefield
+  requestSource: IbizaWebAppExtension
+  publicNetworkAccessForIngestion: Enabled
+  publicNetworkAccessForQuery: Enabled
+  retentionInDays: 90
+  samplingPercentage: 100
+  enableE2ETracePropagation: false
+  enableQueryLogTrace: false
+  enableProfiler: true
+  enableSnapshotDebugger: true
+  enableAutoCollectHeartbeat: true
+  enableAutoCollectPerformanceCounters: true
+  enableAutoCollectRequests: true
+  enableAutoCollectDependencies: true
+  enableAutoCollectExceptions: true
+  enableAutoCollectEvents: true
+  enableAutoCollectTraces: true
+  enableAutoCollectLogs: true
+  enableAutoCollectMetrics: true
+  enableAutoCollectBrowserTimings: true
+  enableAutoCollectDependencies: true
+  enableAutoCollectPerformanceCounters: true
+  enableAutoCollectRequests: true
+  enableAutoCollectExceptions: true
+  enableAutoCollectEvents: true
+  enableAutoCollectTraces: true
+  enableAutoCollectLogs: true
+  enableAutoCollectMetrics: true
+  enableAutoCollectBrowserTimings: true 

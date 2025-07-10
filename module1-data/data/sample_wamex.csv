@@ -1,0 +1,21 @@
+PERMIT_ID,LONGITUDE,LATITUDE,MINERAL_TYPE,DESCRIPTION,EXPLORATION_TYPE,STATUS,DEPTH_M
+P001001,115.8605,-31.9505,Gold,"Gold exploration project in Perth metropolitan region with quartz vein mineralization",Surface Sampling,Active,50
+P001002,121.4944,-30.7522,Iron Ore,"Large iron ore deposit with hematite and magnetite mineralization near Kalgoorlie",Drilling,Active,200
+P001003,118.7000,-32.1000,Copper,"Copper porphyry system with chalcopyrite mineralization in volcanic host rocks",Geophysical Survey,Active,150
+P001004,116.5000,-29.8000,Nickel,"Nickel sulfide deposit in ultramafic intrusion with pentlandite and pyrrhotite",Drilling,Active,300
+P001005,117.2000,-33.5000,Lithium,"Lithium brine project in playa lake with high grade lithium chloride concentrations",Chemical Analysis,Active,100
+P001006,119.3000,-28.5000,Gold,"Orogenic gold system in metamorphic rocks with visible gold in quartz veins",Underground Sampling,Active,400
+P001007,120.1000,-31.2000,Iron Ore,"Banded iron formation with high grade hematite ore suitable for direct shipping",Bulk Sampling,Active,80
+P001008,114.9000,-30.8000,Uranium,"Sandstone hosted uranium with roll front mineralization and elevated radon",Radiometric Survey,Suspended,60
+P001009,122.5000,-29.1000,Zinc,"Volcanic hosted massive sulfide with zinc lead silver mineralization",Core Drilling,Active,250
+P001010,116.8000,-32.7000,Bauxite,"Lateritic bauxite deposit on plateau with high alumina low silica ore",Pit Sampling,Active,30
+P001011,115.2000,-33.1000,Gold,"Alluvial gold deposit in tertiary gravels with coarse gold particles",Bulk Sampling,Active,20
+P001012,123.4000,-28.9000,Copper,"Sediment hosted copper with malachite and azurite staining in sandstone",Trenching,Active,75
+P001013,118.1000,-30.5000,Nickel,"Lateritic nickel deposit over serpentinized ultramafic with garnierite",Auger Drilling,Active,45
+P001014,120.8000,-32.4000,Lead,"Galena rich veins in limestone with associated silver and zinc mineralization",Underground Mapping,Active,180
+P001015,117.6000,-29.3000,Iron Ore,"Magnetite rich iron formation with potential for beneficiation to pellet feed",Magnetic Survey,Active,120
+P001016,119.7000,-31.8000,Gold,"Epithermal gold silver system in volcanic rocks with quartz adularia veins",Surface Mapping,Active,90
+P001017,115.9000,-28.7000,Rare Earth,"Monazite bearing heavy mineral sands with elevated rare earth elements",Heavy Mineral Sampling,Active,15
+P001018,124.2000,-30.6000,Tin,"Cassiterite in pegmatite with associated tantalum and lithium mineralization",Rock Chip Sampling,Active,110
+P001019,116.3000,-31.9000,Coal,"Sub bituminous coal seams in permian sediments suitable for thermal coal",Coal Quality Testing,Active,80
+P001020,121.7000,-29.7000,Silver,"Silver rich base metal veins with galena sphalerite and tetrahedrite",Channel Sampling,Active,160

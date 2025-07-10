@@ -1,0 +1,51 @@
+# Module 1: Data Foundation - Azure Integration Configuration
+
+# Azure PostgreSQL Database
+azure_postgresql:
+  server_name: geochat-postgres
+  resource_group: geochat-bootcamp
+  location: australiaeast
+  version: "15"
+  administrator_login: geochat_admin
+  database_name: geochat_data
+  ssl_enforcement: true
+  backup_retention_days: 7
+  geo_redundant_backup: false
+  sku:
+    name: Standard_B1ms
+    tier: Basic
+
+# Azure Storage Account
+azure_storage:
+  account_name: geochatdata
+  account_tier: Standard
+  account_replication_type: LRS
+  resource_group: geochat-bootcamp
+  location: australiaeast
+  containers:
+    - name: wamex-data
+      access_type: private
+    - name: processed-data
+      access_type: private
+    - name: exports
+      access_type: blob
+
+# Azure Container Registry
+azure_container_registry:
+  name: geochatregistry
+  resource_group: geochat-bootcamp
+  location: australiaeast
+  sku: Basic
+  admin_enabled: true
+
+# Azure Monitor
+azure_monitor:
+  workspace_name: geochat-logs
+  resource_group: geochat-bootcamp
+  location: australiaeast
+  retention_in_days: 30
+  alerts:
+    - name: database-performance-alert
+      severity: 2
+      description: "Database query performance degradation"
+      threshold: 500  # milliseconds 

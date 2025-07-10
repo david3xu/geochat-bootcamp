@@ -1,0 +1,23 @@
+# Core dependencies for Module 1: Data Foundation
+flask==2.3.3
+flask-cors==4.0.0
+flask-sqlalchemy==3.0.5
+psycopg2-binary==2.9.7
+geopandas==0.13.2
+pandas==2.0.3
+shapely==2.0.1
+pyproj==3.6.0
+sqlalchemy==2.0.20
+geoalchemy2==0.14.1
+pyyaml==6.0.1
+python-dotenv==1.0.0
+requests==2.31.0
+pytest==7.4.2
+pytest-flask==1.2.0
+
+# Azure integration
+azure-identity==1.14.0
+azure-storage-blob==12.17.0
+
+# Performance monitoring
+prometheus-client==0.17.1

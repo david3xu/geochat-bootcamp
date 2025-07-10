@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with PostGIS for spatial data
+  postgis-db:
+    image: postgis/postgis:15-3.3
+    container_name: geochat-postgis
+    environment:
+      POSTGRES_DB: geochat_data
+      POSTGRES_USER: geochat_user
+      POSTGRES_PASSWORD: geochat_pass
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./data/validation_queries.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geochat_user -d geochat_data"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Module 1 Data API Service
+  data-api:
+    build: .
+    container_name: geochat-data-api
+    environment:
+      DATABASE_URL: postgresql://geochat_user:geochat_pass@postgis-db:5432/geochat_data
+      FLASK_ENV: development
+      API_HOST: 0.0.0.0
+      API_PORT: 5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgis-db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:

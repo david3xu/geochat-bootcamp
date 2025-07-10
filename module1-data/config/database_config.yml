@@ -1,0 +1,27 @@
+# Module 1: Data Foundation - Database Configuration
+# This configuration is for local development
+
+database:
+  host: localhost
+  port: 5432
+  database: geochat_data
+  username: geochat_user
+  password: geochat_pass
+
+# PostGIS settings
+postgis:
+  version: "3.3"
+  srid: 4326  # WGS84
+  extensions:
+    - postgis
+    - postgis_topology
+
+# Spatial settings
+spatial:
+  coordinate_system_source: "EPSG:7844"  # GDA2020
+  coordinate_system_target: "EPSG:4326"  # WGS84
+  boundary_box:
+    west: 112.0
+    east: 130.0
+    south: -36.0
+    north: -13.0

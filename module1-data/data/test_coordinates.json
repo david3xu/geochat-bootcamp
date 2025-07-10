@@ -1,0 +1,59 @@
+{
+  "western_australia_coordinates": [
+    {"name": "Perth", "longitude": 115.8605, "latitude": -31.9505},
+    {"name": "Kalgoorlie", "longitude": 121.4944, "latitude": -30.7522},
+    {"name": "Broome", "longitude": 122.2384, "latitude": -17.9644},
+    {"name": "Albany", "longitude": 117.8915, "latitude": -35.0274},
+    {"name": "Geraldton", "longitude": 114.6123, "latitude": -28.7744}
+  ],
+  "mineral_deposit_coordinates": [
+    {"name": "Gold Deposit", "longitude": 121.5, "latitude": -30.8, "mineral_type": "Gold"},
+    {"name": "Iron Ore Deposit", "longitude": 118.6, "latitude": -23.3, "mineral_type": "Iron Ore"},
+    {"name": "Nickel Deposit", "longitude": 120.9, "latitude": -27.4, "mineral_type": "Nickel"},
+    {"name": "Copper Deposit", "longitude": 119.1, "latitude": -25.6, "mineral_type": "Copper"},
+    {"name": "Lithium Deposit", "longitude": 116.5, "latitude": -32.2, "mineral_type": "Lithium"}
+  ],
+  "boundary_polygon": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [112.0, -13.0],
+        [130.0, -13.0],
+        [130.0, -36.0],
+        [112.0, -36.0],
+        [112.0, -13.0]
+      ]
+    ]
+  },
+  "test_queries": [
+    {
+      "name": "Perth 50km Radius",
+      "type": "radius",
+      "parameters": {
+        "latitude": -31.9505,
+        "longitude": 115.8605,
+        "radius": 50000
+      }
+    },
+    {
+      "name": "Kalgoorlie Gold Region",
+      "type": "radius",
+      "parameters": {
+        "latitude": -30.7522,
+        "longitude": 121.4944,
+        "radius": 100000,
+        "mineral_type": "Gold"
+      }
+    },
+    {
+      "name": "WA North Region",
+      "type": "bounding_box",
+      "parameters": {
+        "north": -13.0,
+        "south": -25.0,
+        "east": 130.0,
+        "west": 112.0
+      }
+    }
+  ]
+}

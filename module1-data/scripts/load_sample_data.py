@@ -4,12 +4,13 @@ Sample Data Loading Script for Module 1
 Load and process sample WAMEX data for testing and development
 """
 import sys
+import os
 import logging
 from pathlib import Path
 import pandas as pd
 
 # Add src to path for imports
-sys.path.append(str(Path(__file__).parent.parent / 'src'))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.wamex_processor import WAMEXDataProcessor
 from src.spatial_database import PostgreSQLSpatialManager

@@ -4,11 +4,12 @@ Database Setup Script for Module 1: Data Foundation
 Automated database initialization for student environments
 """
 import sys
+import os
 import logging
 from pathlib import Path
 
 # Add src to path for imports
-sys.path.append(str(Path(__file__).parent.parent / 'src'))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.config import config
 from src.spatial_database import PostgreSQLSpatialManager

@@ -6,7 +6,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.settings.development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.chat2map_api.settings')
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'backend'))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,5 +19,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
-    main() 
+if __name__ == "__main__":
+    main()

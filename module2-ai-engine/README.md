@@ -55,7 +55,7 @@ Module 2: AI Engine with Snowflake Cortex
 ### 📁 Project Structure
 
 ```
-module2-ai/
+module2-ai-engine/
 ├── src/                          # Core AI engine modules
 │   ├── config.py                 # Configuration management
 │   ├── snowflake_cortex_client.py # Snowflake Cortex integration
@@ -94,7 +94,7 @@ module2-ai/
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd module2-ai
+cd module2-ai-engine
 
 # Create virtual environment
 python -m venv venv

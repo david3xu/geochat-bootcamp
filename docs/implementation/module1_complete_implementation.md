@@ -29,7 +29,7 @@ psql -h student-db.postgres.database.azure.com -c "SELECT PostGIS_Version();"
 ## 📁 **Complete File Structure**
 
 ```
-module1-data/
+module1-data-pipeline/
 ├── src/
 │   ├── __init__.py
 │   ├── wamex_processor.py         # Core data processing engine

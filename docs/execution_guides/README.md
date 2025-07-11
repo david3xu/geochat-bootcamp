@@ -18,7 +18,7 @@ These execution guides provide step-by-step instructions for manually setting up
 ## Related Scripts
 
 For automated execution, see the corresponding scripts in each module's `scripts` directory:
-- Module 1: `module1-data/scripts/run_module1.sh`
+- Module 1: `module1-data-pipeline/scripts/run_module1.sh`
 
 ## Requirements
 

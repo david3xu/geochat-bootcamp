@@ -31,7 +31,7 @@ curl -s http://student-ai-api/api/ai/search -d '{"query":"copper mining"}' | jq 
 ## 📁 **Complete File Structure**
 
 ```
-module2-ai/
+module2-ai-engine/
 ├── src/
 │   ├── __init__.py
 │   ├── snowflake_cortex_client.py    # Core Snowflake integration
